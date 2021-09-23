@@ -1,3 +1,33 @@
-.cnt {
-    padding-top: 10px;
+
+
+.favslist{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50px;
+    max-width: 1000px;
+}
+
+.favslist h2{
+    padding:1rem;
+    font-size: 2.5rem;
+    color: var(--second);
+    text-shadow: 3px 3px #000000ce;
+    text-align: center;
+}
+
+.lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.det {
+    color:var(--principalDark);
 }

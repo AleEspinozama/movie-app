@@ -22,6 +22,8 @@ export class Buscador extends Component {
     this.props.getMovies(this.state.title)
   }
 
+  
+
   render() {
     const { title } = this.state;
     console.log(this.props.movies);
@@ -41,15 +43,23 @@ export class Buscador extends Component {
           </div>
           <button type="submit">BUSCAR</button>
         </form>
-        <div>
-         {this.props.movies.map(movie=> 
-            <div key={movie.imdbID}>
+        <div className= "movieslist">      
+         { this.props.movies?.map(movie=> 
+            <div key={movie.imdbID} className="movie" >
                 <Link to={`/movie/${movie.imdbID}`}  >
-                <h3>{movie.Title}</h3>
+                <img src={movie.Poster} alt={movie.Title}></img>
                 </Link>
-                <button onClick={() => this.props.addMovieFavorite({title: movie.Title, id: movie.imdbID})}>Fav</button>
+                  <div className="det">
+                    <h3>{movie.Title}</h3>
+                    <button onClick={() => this.props.addMovieFavorite({title: movie.Title, id: movie.imdbID, poster: movie.Poster})}>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star" width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#a905b6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                              <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                               </svg>
+                    </button>   
+                  </div>       
               </div>
-            )
+            )      
           }
         </div>
       </div>
@@ -59,8 +69,7 @@ export class Buscador extends Component {
 
 function mapStateToProps(state) { //trae el estado de redux en forma de props
   return {
-    movies: state.moviesLoaded
-
+    movies: state.moviesLoaded,
   };
 }
 

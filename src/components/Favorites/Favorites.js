@@ -10,19 +10,22 @@ export class ConnectedList extends Component {
   render() {
     console.log(this.props.movies);
     return (
-      <div>
-        <h2>Películas Favoritas</h2>
-        <ul>
-         {this.props.movies.map(movie=> 
-          <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}  >
-            <h3>{movie.title}</h3>
-            </Link>
-            <button onClick={() => this.props.removeMovieFavorite({id: movie.id})}>X</button>
-          </li>
-            )
-          }
-        </ul>
+      <div className="favslist">
+          <h2>Favorites</h2>
+          <div className="lista">
+              {this.props.movies.map(movie=> 
+                <div key={movie.id}>
+                  <Link to={`/movie/${movie.id}`}  >
+                    <img src={movie.poster} alt={movie.title}></img>
+                  </Link>
+                  <div className="det">
+                  <h3>{movie.title}</h3>
+                  <button onClick={() => this.props.removeMovieFavorite({id: movie.id})}>X</button>
+                  </div>
+              </div>
+                )
+              }
+        </div>
       </div>
     );
   }
