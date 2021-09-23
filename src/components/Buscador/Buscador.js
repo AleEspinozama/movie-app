@@ -46,7 +46,7 @@ export class Buscador extends Component {
         <div className= "movieslist">      
          { this.props.movies?.map(movie=> 
             <div key={movie.imdbID} className="movie" >
-                <Link to={`/movie/${movie.imdbID}`}  >
+                <Link to={`/movie-app/movie/${movie.imdbID}`}  >
                 <img src={movie.Poster} alt={movie.Title}></img>
                 </Link>
                   <div className="det">

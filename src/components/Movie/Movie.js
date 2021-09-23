@@ -39,7 +39,7 @@ class Movie extends React.Component {
                       <h3>{this.props.movieDetail.Runtime} </h3>
                       <h3>IMDB rating: {this.props.movieDetail.imdbRating} </h3>
                   </div>
-                  <Link exact to="/" className= "title back">Home</Link>
+                  <Link exact to="/movie-app" className= "title back">Home</Link>
               </div>
             </div>
         );
