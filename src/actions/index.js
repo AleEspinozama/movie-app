@@ -12,7 +12,7 @@ export function addMovieFavorite(payload) {
   
 export function getMovies(titulo) {
     return function(dispatch) { //regresa una acción dispatch
-    return fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${titulo}`)
+    return fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${titulo}`)
         .then(response => response.json())
         .then(json => {
           dispatch({ type: GET_MOVIES, payload: json });
