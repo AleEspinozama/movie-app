@@ -1,6 +1,6 @@
 import {ADD_MOVIE_FAVORITE, GET_MOVIES, GET_MOVIE_DETAIL, REMOVE_MOVIE_FAVORITE, CLEAR_MOVIE_DETAIL} from "../action-types"
 
-const apiKey = process.env.REACT_APP_API_KEY;
+//const apiKey = process.env.REACT_APP_API_KEY;
 
 
 export function addMovieFavorite(payload) {
