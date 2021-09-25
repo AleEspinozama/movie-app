@@ -38,6 +38,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    gap:2rem;
     top: 50px;
     max-width: 1000px;
 }
@@ -45,7 +46,6 @@
 .movie{
     display: flex;
     flex-direction: column;
-    width: 18rem;
     margin: 1rem;
     align-items: center;
     justify-content: center;
